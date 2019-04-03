@@ -166,6 +166,65 @@
 	</div>
 </header>
 
+<style>
+	.background-title-container{
+		position: relative;
+    background-color: #008dbf;
+    height: 100%;
+	}
+	.background-job-title{
+		position: absolute;
+		width: 90%;
+		left: 50%;
+		top: 50%;
+		-moz-transform: translateX(-50%) translateY(-50%);
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
+		color: #fff;
+		text-align: center;
+		letter-spacing: 1.5px;
+		font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN","游ゴシック", YuGothic, "メイリオ", Meiryo, Verdana, sans-serif;
+	}
+	.background-job-place{
+		font-size: 13px;
+		display: block;
+		line-height: 1.5;
+		margin: 0 0 10px;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+		word-break: break-word;
+	}
+	.background-job-occupation:before{
+		content: "";
+		display: block;
+		width: 30px;
+		height: 2px;
+		background: #fff;
+		margin: 0 auto 10px;
+	}
+	.background-job-occupation{
+		font-size: 15px;
+		display: block;
+		line-height: 1.5;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+		word-break: break-word;
+	}
+	@media only screen and (max-width:640px){
+		.background-job-place{
+			font-size: 12px;
+		}
+		.background-job-occupation{
+			font-size: 14px;
+		}
+	}
+</style>
+
 <main class="common_main">
 	<section class="top_mv_wrap">
 		<div class="top_mv_inner">
@@ -386,9 +445,19 @@
 					<div class="top_pickup_inner">
 						<div class="top_pickup_common_block">
 							<a href="recruit_detail.html" class="link">
-								<div class="pic" style="background: url(static/images/common/sample_pic01.jpg) center center no-repeat;background-size: cover;">
+								<div class="pic">
+									<div class="background-title-container">
+                    <p class="background-job-title">
+	                    <span class="background-job-place">Jakarta</span>
+	                    <span class="background-job-occupation">営業スタッフ※住居手当あり（ジャカルタ）（日系物流企業）</span>
+                    </p>
+                  </div>
+								</div>
+								<!--
+<div class="pic" style="background: url(static/images/common/sample_pic01.jpg) center center no-repeat;background-size: cover;">
 									<img src="static/images/common/pickup.png" alt="pickup">
 								</div>
+-->
 								<h2 class="title">ここに注目の文章が入りますここに注目の文章が入ります</h2>
 								<ul class="common_recruit_info_list">
 									<li class="info_item">
@@ -414,6 +483,104 @@
 								</a>
 								<button type="button" class="recruit_btn">応募する</button>
 							</div>
+							<!-- new btn -->
+							<button type="button" class="top_popup_btn">まずは相談してみる</button>
+							<div class="top_popup_block">
+								<p class="top_popup_text">
+									「渡航は？住む場所は？保険は？そんな悩みから相談に乗ります。」まずは相談込みで会員登録をしてみましょう
+								</p>
+							</div>
+							<style>
+								.top_popup_btn{
+									display: block;
+									width: 100%;
+									margin: 10px auto 0;
+									font-size: 14px;
+									font-weight: bold;
+									background: #ededed;
+									color: #000;
+									border: none;
+									padding: 5px 0 0;
+									height: 45px;
+									border-bottom: 3px #c3c3c3 solid;
+									font-family: "游ゴシック", YuGothic, Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+								}
+								.top_popup_btn:hover{
+									padding: 0;
+									border-top: 3px #ededed solid;
+									border-bottom: none;
+									-moz-transform:translateY(3px);
+									-ms-transform: translateY(3px);
+									-webkit-transform: translateY(3px);
+									transform: translateY(3px);
+								}
+								.top_popup_block{
+									display: none;
+									position: relative;
+									background: #121212;
+									padding: 10px;
+									border-radius: 5px;
+									margin:10px 0 0;
+								}
+								.top_popup_block:before{
+									content: "";
+									position: absolute;
+									top:-5px;
+									left: 50%;
+									-moz-transform: translateX(-50%);
+									-ms-transform: translateX(-50%);
+									-webkit-transform: translateX(-50%);
+									transform: translateX(-50%);
+									width: 0;
+									height: 0;
+									border-left: 5px solid transparent;
+									border-right: 5px solid transparent;
+									border-bottom: 5px solid #121212;
+								}
+								.top_popup_text{
+									font-size: 12px;
+									line-height: 1.5;
+									color: #fff;
+									font-family: "游ゴシック", YuGothic, Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+								}
+								@media only screen and (max-width:960px){
+									.top_popup_btn:hover{
+										padding: 5px 0 0;
+										border-top: none;
+										border-bottom: 3px #c3c3c3 solid;
+										-moz-transform:translateY(0);
+										-ms-transform: translateY(0);
+										-webkit-transform: translateY(0);
+										transform: translateY(0);
+									}
+								}
+								@media only screen and (max-width:640px){
+									.top_popup_text{
+										font-size: 11px;
+									}
+								}
+							</style>
+							<script>
+								jQuery(function($){
+									$(window).on("load resize",function(){
+										if($(window).width() > 960){
+											$(".top_popup_btn").hover(
+											  function () {
+											    $(".top_popup_block").stop().fadeIn();
+											  },
+											  function () {
+											    $(".top_popup_block").stop().fadeOut();
+											  }
+											);
+										}else{
+											$(".top_popup_btn").on("click",function(){
+												$(".top_popup_block").stop().fadeToggle();
+											});
+										}
+									});
+								});
+							</script>
+							<!-- new btn end-->
 						</div>
 						<div class="top_pickup_common_block">
 							<a href="recruit_detail.html" class="link">
@@ -691,9 +858,19 @@
 					<ul class="aside_blog_list">
 						<li class="item">
 							<a href="recruit_detail.html" class="link">
-								<div class="pic" style="background: url(static/images/common/sample_pic01.jpg) center center no-repeat;background-size: cover;">
+								<div class="pic">
+									<div class="background-title-container">
+                    <p class="background-job-title">
+	                    <span class="background-job-place">Jakarta</span>
+	                    <span class="background-job-occupation">営業スタッフ※住居手当あり（ジャカルタ）（日系物流企業）</span>
+                    </p>
+                  </div>
+								</div>
+								<!--
+<div class="pic" style="background: url(static/images/common/sample_pic01.jpg) center center no-repeat;background-size: cover;">
 									<img src="static/images/common/num01.png" alt="1">
 								</div>
+-->
 								<ul class="common_recruit_info_list">
 									<li class="info_item">
 										<img src="static/images/common/icon03.png" alt="job">

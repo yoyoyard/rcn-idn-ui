@@ -165,6 +165,85 @@
 		</div>
 	</div>
 </header>
+<style>
+	.background-title-container{
+		position: relative;
+    background-color: #008dbf;
+    height: 100%;
+	}
+	.background-job-title{
+		position: absolute;
+		width: 90%;
+		left: 50%;
+		top: 50%;
+		-moz-transform: translateX(-50%) translateY(-50%);
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
+		color: #fff;
+		text-align: center;
+		letter-spacing: 1.5px;
+		font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN","游ゴシック", YuGothic, "メイリオ", Meiryo, Verdana, sans-serif;
+	}
+	.background-job-place{
+		font-size: 13px;
+		display: block;
+		line-height: 1.5;
+		margin: 0 0 10px;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+		word-break: break-word;
+	}
+	.background-job-occupation:before{
+		content: "";
+		display: block;
+		width: 30px;
+		height: 2px;
+		background: #fff;
+		margin: 0 auto 10px;
+	}
+	.background-job-occupation{
+		font-size: 15px;
+		display: block;
+		line-height: 1.5;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+		word-break: break-word;
+	}
+	@media only screen and (max-width:640px){
+		.background-job-place{
+			font-size: 12px;
+		}
+		.background-job-occupation{
+			font-size: 14px;
+		}
+	}
+	.clip{
+		outline: none;
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		transition: all  0.3s ease;
+		cursor: pointer;
+	}
+	.clip:hover{
+		opacity: .85;
+	}
+	.clip.active{
+		filter: hue-rotate(150deg);
+	}
+</style>
+<script>
+	jQuery(function($){
+		$(".clip").on("click",function(){
+			$(this).toggleClass("active");
+		});
+	});
+</script>
 
 <main class="common_main">
 	<section class="search_mv_wrap">
@@ -371,12 +450,20 @@
 				<article class="search_common_block">
 					<div class="title_block">
 						<h1 class="title">Network Engineer Routing Switching (Balikpapan)</h1>
-						<button type="button" class="clip">
+						<button type="button" class="clip active">
 							<img src="static/images/search/icon03.png" alt="clip">
 						</button>
 					</div>
 					<div class="info_block">
-						<div class="pic" style="background: url(static/images/search/sample_pic.jpg) center center no-repeat;background-size: cover;"></div>
+						<div class="pic">
+							<div class="background-title-container">
+                <p class="background-job-title">
+                  <span class="background-job-place">Jakarta</span>
+                  <span class="background-job-occupation">営業スタッフ※住居手当あり（ジャカルタ）（日系物流企業）</span>
+                </p>
+              </div>
+						</div>
+<!-- 						<div class="pic" style="background: url(static/images/search/sample_pic.jpg) center center no-repeat;background-size: cover;"></div> -->
 						<ul class="info_list">
 							<li class="item">
 								<img src="static/images/search/icon04.png" alt="jobtype" class="icon">
@@ -410,6 +497,113 @@
 						<a href="recruit_detail.html" class="detail_btn"><span>詳細を見る</span></a>
 						<button type="button" class="recruit_btn">応募する</button>
 					</div>
+					<!-- new btn -->
+						<div class="search_popup_bg">
+							<button type="button" class="search_popup_btn">まずは相談してみる</button>
+							<div class="search_popup_block">
+								<p class="search_popup_text">
+									「渡航は？住む場所は？保険は？そんな悩みから相談に乗ります。」まずは相談込みで会員登録をしてみましょう
+								</p>
+							</div>
+						</div>
+						<style>
+							.search_popup_bg{
+								padding:0 7px 10px;
+								background: #edf0f6;
+							}
+							.search_popup_btn{
+								display: block;
+								max-width: 350px;
+								width: 100%;
+								margin: 0 auto;
+								font-size: 13px;
+								font-weight: bold;
+								background:#008dbf;
+								color: #fff;
+								border: none;
+								padding: 5px 0 0;
+								height: 35px;
+								border-bottom: 3px #016386 solid;
+								font-family: "游ゴシック", YuGothic, Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+							}
+							.search_popup_btn:hover{
+								padding: 0;
+								border-top: 3px #008dbf solid;
+								border-bottom: none;
+								-moz-transform:translateY(3px);
+								-ms-transform: translateY(3px);
+								-webkit-transform: translateY(3px);
+								transform: translateY(3px);
+							}
+							.search_popup_block{
+								display: none;
+								position: relative;
+								background: #121212;
+								padding: 10px;
+								border-radius: 5px;
+								margin: 10px auto 0;
+								width: 100%;
+								max-width: 350px;
+							}
+							.search_popup_block:before{
+								content: "";
+								position: absolute;
+								top:-5px;
+								left: 50%;
+								-moz-transform: translateX(-50%);
+								-ms-transform: translateX(-50%);
+								-webkit-transform: translateX(-50%);
+								transform: translateX(-50%);
+								width: 0;
+								height: 0;
+								border-left: 5px solid transparent;
+								border-right: 5px solid transparent;
+								border-bottom: 5px solid #121212;
+							}
+							.search_popup_text{
+								font-size: 12px;
+								line-height: 1.5;
+								color: #fff;
+								font-family: "游ゴシック", YuGothic, Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+							}
+							@media only screen and (max-width:960px){
+								.search_popup_btn:hover{
+									padding: 5px 0 0;
+									border-top: none;
+									border-bottom: 3px #016386 solid;
+									-moz-transform:translateY(0);
+									-ms-transform: translateY(0);
+									-webkit-transform: translateY(0);
+									transform: translateY(0);
+								}
+							}
+							@media only screen and (max-width:640px){
+								.search_popup_text{
+									font-size: 11px;
+								}
+							}
+						</style>
+						<script>
+							jQuery(function($){
+								$(window).on("load resize",function(){
+									if($(window).width() > 960){
+										$(".search_popup_btn").hover(
+										  function () {
+										    $(".search_popup_block").stop().fadeIn();
+										  },
+										  function () {
+										    $(".search_popup_block").stop().fadeOut();
+										  }
+										);
+									}else{
+										$(".search_popup_btn").on("click",function(){
+											$(".search_popup_block").stop().fadeToggle();
+										});
+									}
+								});
+							});
+						</script>
+						<!-- new btn end-->
 				</article>
 				<article class="search_common_block">
 					<div class="title_block">
